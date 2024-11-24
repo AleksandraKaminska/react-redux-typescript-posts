@@ -1,10 +1,13 @@
 {
   "$schema": "../$schema.json",
   "general": {
-    "posts": "Posts"
   },
   "nav": {
     "home": "Home"
+  },
+  "posts": {
+    "domain": "Posts",
+    "createPost": "Create post"
   },
   "actions": {
     "save": "Save",
@@ -33,7 +36,7 @@
     "required": "Required"
   },
   "fields": {
-    "name": "Name",
-    "optional": "Optional"
+    "body": "Body",
+    "title": "Title"
   }
 }

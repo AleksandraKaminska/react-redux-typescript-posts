@@ -24,7 +24,7 @@ export default () => {
         "@/providers": path.resolve(__dirname, "./src/providers"),
         "@/routes": path.resolve(__dirname, "./src/routes"),
         "@/types": path.resolve(__dirname, "./src/types"),
-        "@/features": path.resolve(__dirname, "./src/features"),
+        "@/redux": path.resolve(__dirname, "./src/redux"),
         "@/utils": path.resolve(__dirname, "./src/utils"),
       },
     },

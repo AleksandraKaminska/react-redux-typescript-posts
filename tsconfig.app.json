@@ -36,7 +36,7 @@
       "@/utils/*": ["./src/utils/*"],
       "@/lib/*": ["./src/lib/*"],
       "@/types": ["./src/types"],
-      "@/features": ["./src/features/*"]
+      "@/redux": ["src/redux/*"]
     },
     "types": ["@testing-library/jest-dom"],
   },

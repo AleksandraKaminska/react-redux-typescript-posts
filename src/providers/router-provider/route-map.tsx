@@ -24,6 +24,10 @@ export const RouteMap: RouteObject[] = [
         },
         children: [
           {
+            path: "create",
+            lazy: () => import("@/routes/posts/post-create"),
+          },
+          {
             path: ":id",
             children: [
               {
@@ -31,10 +35,6 @@ export const RouteMap: RouteObject[] = [
                 lazy: () => import("@/routes/posts/post-edit"),
               },
             ],
-          },
-          {
-            path: "new",
-            lazy: () => import("@/routes/posts/post-new"),
           },
         ],
       },

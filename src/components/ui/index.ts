@@ -8,12 +8,7 @@ export { Input } from "./input"
 export { Label } from "./label"
 export { Tabs } from "./tabs"
 export { Text } from "./text"
-export { Toast } from "./toast"
-export { Toaster } from "./toaster"
+export { Textarea } from "./textarea"
 
 // Utils
 export { clx } from "../../utils/clx"
-export { toast } from "../../utils/toast"
-
-// Types
-export * from "./types"
