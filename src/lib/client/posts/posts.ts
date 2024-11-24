@@ -5,11 +5,11 @@ async function listPosts(query?: Record<string, any>) {
   return getRequest<PostListRes>(`/posts`, query)
 }
 
-async function retrievePost(id: string, query?: Record<string, any>) {
+async function retrievePost(id: number, query?: Record<string, any>) {
   return getRequest<PostRes>(`/posts/${id}`, query)
 }
 
-async function updatePost(id: string, payload: UpdatePostReq) {
+async function updatePost(id: number, payload: UpdatePostReq) {
   return putRequest<PostRes>(`/posts/${id}`, payload)
 }
 

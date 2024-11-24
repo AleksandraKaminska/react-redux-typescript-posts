@@ -29,6 +29,14 @@ export const createPost = createAsyncThunk(
   }
 )
 
+export const updatePost = createAsyncThunk(
+  "posts/updatePost",
+  async (data: PostRes) => {
+    await client.posts.update(data.id, data)
+    return data
+  }
+)
+
 export const deletePost = createAsyncThunk(
   "posts/deletePost",
   async (postId: number) => {
@@ -78,6 +86,30 @@ const postsSlice = createSlice({
         state.isLoading = false
         state.isPending = false
         state.error = action.error.message ?? "Failed to create the post"
+      })
+      .addCase(updatePost.pending, (state) => {
+        state.isLoading = false
+        state.isPending = true
+        state.error = null
+      })
+      .addCase(
+        updatePost.fulfilled,
+        (state, action: PayloadAction<PostRes>) => {
+          state.isLoading = false
+          state.isPending = false
+
+          const index = state.posts.findIndex(
+            (post) => post.id === action.payload.id
+          )
+          if (index !== -1) {
+            state.posts[index] = action.payload
+          }
+        }
+      )
+      .addCase(updatePost.rejected, (state, action) => {
+        state.isLoading = false
+        state.isPending = false
+        state.error = action.error.message ?? "Failed to update the post"
       })
       .addCase(deletePost.fulfilled, (state, action: PayloadAction<number>) => {
         state.posts = state.posts.filter((post) => post.id !== action.payload)

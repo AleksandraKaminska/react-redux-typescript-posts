@@ -8,14 +8,8 @@
     },
     "general": {
       "type": "object",
-      "properties": {
-        "posts": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "posts"
-      ]
+      "properties": {},
+      "required": []
     },
     "nav": {
       "type": "object",
@@ -26,6 +20,25 @@
       },
       "required": [
         "home"
+      ]
+    },
+    "posts": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string"
+        },
+        "createPost": {
+          "type": "string"
+        },
+        "editPost": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "domain",
+        "createPost",
+        "editPost"
       ]
     },
     "actions": {
@@ -132,16 +145,16 @@
     "fields": {
       "type": "object",
       "properties": {
-        "name": {
+        "body": {
           "type": "string"
         },
-        "optional": {
+        "title": {
           "type": "string"
         }
       },
       "required": [
-        "name",
-        "optional"
+        "body",
+        "title"
       ]
     }
   },
@@ -149,6 +162,7 @@
     "$schema",
     "general",
     "nav",
+    "posts",
     "actions",
     "errorBoundary",
     "errors",

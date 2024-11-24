@@ -50,7 +50,9 @@ export const PostList = () => {
           <li key={post.id}>
             <InfoBox label={post.title} description={post.body}>
               <div className="mt-2 flex gap-2">
-                <Button variant="secondary">{t("actions.edit")}</Button>
+                <Link to={`/posts/${post.id}/edit`}>
+                  <Button variant="secondary">{t("actions.edit")}</Button>
+                </Link>
                 <Button variant="danger" onClick={() => handleDelete(post.id)}>
                   {t("actions.delete")}
                 </Button>
