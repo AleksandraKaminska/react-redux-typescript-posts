@@ -1,0 +1,39 @@
+{
+  "$schema": "../$schema.json",
+  "general": {
+    "posts": "Posts"
+  },
+  "nav": {
+    "home": "Home"
+  },
+  "actions": {
+    "save": "Save",
+    "create": "Create",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "back": "Back",
+    "close": "Close",
+    "continue": "Continue",
+    "confirm": "Confirm",
+    "edit": "Edit",
+    "update": "Update"
+  },
+  "errorBoundary": {
+    "badRequestTitle": "Bad request",
+    "badRequestMessage": "The request was invalid.",
+    "notFoundTitle": "Not found",
+    "notFoundMessage": "The page you are looking for does not exist.",
+    "internalServerErrorTitle": "Internal server error",
+    "internalServerErrorMessage": "An error occurred on the server.",
+    "defaultTitle": "An error occurred",
+    "defaultMessage": "An error occurred while rendering this page."
+  },
+  "errors": {
+    "serverError": "Server error - Try again later.",
+    "required": "Required"
+  },
+  "fields": {
+    "name": "Name",
+    "optional": "Optional"
+  }
+}

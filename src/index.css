@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: local("Inter");
+    font-weight: 400;
+    font-display: swap;
+    src: url("./assets/fonts/Inter-Regular.woff2") format("truetype");
+  }
+
+  @font-face {
+    font-family: local("Inter");
+    font-weight: 500;
+    font-display: swap;
+    src: url("./assets/fonts/Inter-Medium.woff2") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto Mono";
+    font-weight: 400;
+    font-display: swap;
+    src: url("./assets/fonts/RobotoMono-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    font-display: swap;
+    src: url("./assets/fonts/RobotoMono-Medium.ttf") format("truetype");
+  }
+
+  :root {
+    @apply bg-ui-bg-subtle text-ui-fg-base antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply !bg-ui-bg-base;
+  }
+}
