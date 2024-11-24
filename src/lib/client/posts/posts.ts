@@ -17,7 +17,7 @@ async function createPost(payload: CreatePostReq) {
   return postRequest<PostRes>(`/posts`, payload)
 }
 
-async function deletePost(id: string) {
+async function deletePost(id: number): Promise<number> {
   return deleteRequest(`/posts/${id}`)
 }
 

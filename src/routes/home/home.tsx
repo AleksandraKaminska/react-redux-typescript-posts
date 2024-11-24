@@ -1,18 +1,25 @@
 import { Button, Container, Heading, InfoBox } from "@/components/ui"
-import { fetchPosts } from "@/features/posts/postsSlice"
-import { useAppDispatch, useAppSelector } from "@/hooks/redux"
+import { deletePost, fetchPosts } from "@/features/posts/postsSlice"
+import { AppDispatch, RootState } from "@/store"
 import { Loader } from "lucide-react"
 import { useEffect } from "react"
 import { useTranslation } from "react-i18next"
+import { useDispatch, useSelector } from "react-redux"
 
 export const Home = () => {
   const { t } = useTranslation()
-  const dispatch = useAppDispatch()
-  const { posts, isLoading, error } = useAppSelector((state) => state.posts)
+  const dispatch = useDispatch<AppDispatch>()
+  const { posts, isLoading, error } = useSelector(
+    (state: RootState) => state.posts
+  )
 
   useEffect(() => {
     dispatch(fetchPosts())
   }, [dispatch])
+
+  const handleDelete = (postId: number) => {
+    dispatch(deletePost(postId))
+  }
 
   if (isLoading) {
     return (
@@ -35,7 +42,9 @@ export const Home = () => {
             <InfoBox label={post.title} description={post.body}>
               <div className="mt-2 flex gap-2">
                 <Button variant="secondary">{t("actions.edit")}</Button>
-                <Button variant="danger">{t("actions.delete")}</Button>
+                <Button variant="danger" onClick={() => handleDelete(post.id)}>
+                  {t("actions.delete")}
+                </Button>
               </div>
             </InfoBox>
           </li>

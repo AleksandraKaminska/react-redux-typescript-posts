@@ -9,7 +9,7 @@ const commonHeaders = async (): Promise<HeadersInit> => {
 
 export function getUrl(path: string, query?: Record<string, any>) {
   const params = query ? stringify(query) : null
-  return `${BASE_URL}/${path}${params ? `?${params}` : ""}`
+  return `${BASE_URL}${path}${params ? `?${params}` : ""}`
 }
 
 function getBody(payload?: Record<string, any>) {
